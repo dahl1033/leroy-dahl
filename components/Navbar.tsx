@@ -1,7 +1,6 @@
 import { Popover, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { Fragment } from "react";
-import Navmenu from "./Navmenu";
 
 const Logo = (
   <svg
