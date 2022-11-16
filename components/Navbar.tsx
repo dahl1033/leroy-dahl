@@ -17,7 +17,7 @@ const Logo = (
     <path
       d="M22.5 1.17208L44 14.3163L44 40.6837L22.5 53.8279L1 40.6837L1 14.3163L22.5 1.17208Z"
       stroke="#16A34A"
-      stroke-width="2"
+      strokeWidth="2"
     />
   </svg>
 );
