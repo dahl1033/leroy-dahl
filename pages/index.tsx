@@ -18,9 +18,9 @@ const Home: NextPage = () => {
       <h3 className="text-sm text-gray-500">{`I'm a software engineer based in Minneapolis, MN specializing in building (and occasionally designing) exceptional websites, applications, and everything in between.`}</h3>
       <Link
         className="px-6 py-3 border text-green-600 border-green-600 w-fit rounded-md mt-16"
-        href="/about"
+        href="/life"
       >
-        Check out my work!
+        Check out my Life!
       </Link>
     </div>
   );
