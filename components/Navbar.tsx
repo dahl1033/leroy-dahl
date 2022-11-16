@@ -81,7 +81,7 @@ const Navbar = () => {
               </Transition>
             </nav>
           ) : (
-            <nav className="flex justify-between sm:px-6">
+            <nav className="flex justify-between sm:px-6 md:px-6 lg:px-20">
               <Link href="/">{Logo}</Link>
               <Popover.Button className={`pr-4 sm:hidden`}>
                 <svg
