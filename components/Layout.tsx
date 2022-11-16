@@ -14,7 +14,7 @@ export const Layout = ({ children }: Props) => {
     <>
       <Head>
         <title>LeRoy Dahl</title>
-        <meta name="description" content="Purina" />
+        <meta name="description" content="Portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
