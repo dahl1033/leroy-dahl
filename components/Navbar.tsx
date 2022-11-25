@@ -55,9 +55,19 @@ const Navbar = () => {
                     </Popover.Button>
                     <Popover.Button>
                       <li>
-                        <Link className="flex" href="/experience">
+                        <Link className="flex" href="/projects">
                           <div className="pr-1 text-sm text-green-600 font-mono">
                             02.
+                          </div>
+                          <div className="text-sm text-gray-400">Projects</div>
+                        </Link>
+                      </li>
+                    </Popover.Button>
+                    <Popover.Button>
+                      <li>
+                        <Link className="flex" href="/experience">
+                          <div className="pr-1 text-sm text-green-600 font-mono">
+                            03.
                           </div>
                           <div className="text-sm text-gray-400">
                             Experience
@@ -69,7 +79,7 @@ const Navbar = () => {
                       <li>
                         <Link className="flex" href="/contact">
                           <div className="pr-1 text-sm text-green-600 font-mono">
-                            03.
+                            04.
                           </div>
                           <div className="text-sm text-gray-400">Contact</div>
                         </Link>
@@ -108,9 +118,17 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link className="flex" href="/experience">
+                  <Link className="flex" href="/projects">
                     <div className="pr-1 text-sm text-green-600 font-mono">
                       02.
+                    </div>
+                    <div className="text-sm text-gray-400">Projects</div>
+                  </Link>
+                </li>
+                <li>
+                  <Link className="flex" href="/experience">
+                    <div className="pr-1 text-sm text-green-600 font-mono">
+                      03.
                     </div>
                     <div className="text-sm text-gray-400">Experience</div>
                   </Link>
@@ -118,7 +136,7 @@ const Navbar = () => {
                 <li>
                   <Link className="flex" href="/contact">
                     <div className="pr-1 text-sm text-green-600 font-mono">
-                      03.
+                      04.
                     </div>
                     <div className="text-sm text-gray-400">Contact</div>
                   </Link>
@@ -138,7 +156,8 @@ export default Navbar;
 // : (
 // <nav>
 //   <Link href="/">{Logo}</Link>
-<ul className="hidden gap-x-12 sm:flex">
+{
+  /* <ul className="hidden gap-x-12 sm:flex">
   <li>
     <Link className="flex" href="/about">
       <div className="pr-1 text-sm text-green-600 font-mono">01.</div>
@@ -157,6 +176,7 @@ export default Navbar;
       <div className="text-sm text-gray-400">Contact</div>
     </Link>
   </li>
-</ul>;
+</ul>; */
+}
 // </nav>
 //               )
