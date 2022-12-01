@@ -1,4 +1,5 @@
+import CardModal from "components/CardModal";
 const About = () => {
-  return <h1 className="text-3xl font-bold underline">About</h1>;
+  return <CardModal />;
 };
 export default About;
