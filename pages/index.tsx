@@ -7,7 +7,7 @@ import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
   return (
-    <div className="max-w-3xl flex flex-col">
+    <div className="max-w-3xl flex flex-col ">
       <div className="text-sm text-green-600 font-mono mb-8">
         Hi, my name is
       </div>

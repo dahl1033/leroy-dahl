@@ -7,10 +7,12 @@ import Navbar from "components/Navbar";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
-    <div className="bg-gray-800  z-10">
+    <div className="bg-neutral-100  z-10">
       <Layout>
-        <Navbar />
-        <div className="flex justify-center px-4 py-6">
+        <div className="flex justify-center flex-col max-w-5xl bg-white">
+          <div className="w-full flex justify-center p-6">
+            <Navbar />
+          </div>
           <Component {...pageProps} />
         </div>
       </Layout>

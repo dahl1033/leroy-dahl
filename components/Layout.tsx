@@ -20,7 +20,7 @@ export const Layout = ({ children }: Props) => {
 
       <main
         className={classNames(
-          "mx-auto min-h-screen overflow-hidden",
+          "mx-auto min-h-screen overflow-hidden flex flex-col items-center",
           inter.className
         )}
       >
