@@ -1,4 +1,4 @@
-import { Popover, Transition } from "@headlessui/react";
+import { Menu, Popover, Transition } from "@headlessui/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Fragment, useEffect, useState } from "react";
@@ -24,13 +24,29 @@ const Logo = (
   </svg>
 );
 
+const ChevronDown = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-3 h-3"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+      />
+    </svg>
+  );
+};
+
 const Navbar = () => {
   const router = useRouter();
   const [route, setRoute] = useState<string>("");
-  const handleClick = (e) => {
-    e.preventDefault();
-    router.push(href);
-  };
+
   useEffect(() => {
     const handleRouteChange = (url: string) => {
       // console.log("route: ", route);
@@ -47,19 +63,56 @@ const Navbar = () => {
     };
   }, [router.events]);
   return (
-    <nav className="flex justify-center shadow-md w-fit border rounded-full h-10 items-center px-6">
-      <ul className="hidden gap-x-12 sm:flex">
-        <li>
-          <ActiveLink children={"About"} href="/about" />
-        </li>
-        <li>
-          <ActiveLink children={"Experience"} href="/experience" />
-        </li>
-        <li>
-          <ActiveLink children={"Contact"} href="/contact" />
-        </li>
-      </ul>
-    </nav>
+    <>
+      <nav className="hidden sm:flex justify-center shadow-md w-fit border rounded-full h-10 items-center px-6">
+        <ul className="hidden gap-x-12 sm:flex">
+          <li>
+            <ActiveLink children={"About"} href="/about" />
+          </li>
+          <li>
+            <ActiveLink children={"Experience"} href="/experience" />
+          </li>
+          <li>
+            <ActiveLink children={"Contact"} href="/contact" />
+          </li>
+        </ul>
+      </nav>
+      <div className="sm:hidden flex justify-center shadow-md w-fit border rounded-full h-10 items-center px-5">
+        <Menu>
+          <Menu.Button className={`flex justify-center items-center gap-2`}>
+            Menu
+            <ChevronDown />
+          </Menu.Button>
+          <Menu.Items
+            className={`absolute top-20 bg-white p-6 rounded-md shadow-inner w-1/2`}
+          >
+            <div className="">
+              <Menu.Item>
+                {({ close }) => (
+                  <div onClick={close}>
+                    <ActiveLink children={"About"} href="/about" />
+                  </div>
+                )}
+              </Menu.Item>
+            </div>
+            <Menu.Item>
+              {({ close }) => (
+                <div onClick={close}>
+                  <ActiveLink children={"Experience"} href="/experience" />
+                </div>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ close }) => (
+                <div onClick={close}>
+                  <ActiveLink children={"Contact"} href="/contact" />
+                </div>
+              )}
+            </Menu.Item>
+          </Menu.Items>
+        </Menu>
+      </div>
+    </>
   );
 };
 
