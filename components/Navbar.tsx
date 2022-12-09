@@ -32,7 +32,7 @@ const ChevronDown = () => {
       viewBox="0 0 24 24"
       strokeWidth={1.5}
       stroke="currentColor"
-      className="w-3 h-3"
+      className="w-3 h-3 dark:stroke-white"
     >
       <path
         strokeLinecap="round"
@@ -79,7 +79,9 @@ const Navbar = () => {
       </nav>
       <div className="sm:hidden flex justify-center shadow-md w-fit border rounded-full h-10 items-center px-5">
         <Menu>
-          <Menu.Button className={`flex justify-center items-center gap-2`}>
+          <Menu.Button
+            className={`flex justify-center items-center gap-2 dark:text-white`}
+          >
             Menu
             <ChevronDown />
           </Menu.Button>

@@ -36,7 +36,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <div className="bg-neutral-100 dark:bg-slate-700">
       <Layout>
-        <div className="flex justify-center h-full flex-col max-w-5xl bg-white dark:bg-slate-800">
+        <div className="flex justify-center h-full flex-col max-w-6xl bg-white dark:bg-slate-800">
           <div className="w-full flex justify-end sm:grid sm:grid-cols-3 p-6">
             <div className="hidden sm:flex" />
             <div className="flex justify-center">

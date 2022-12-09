@@ -25,7 +25,13 @@ const ActiveLink = ({ children, href }: { children: string; href: string }) => {
       }`}
       href={href}
     >
-      <div className="text-sm">{children}</div>
+      <div
+        className={`text-sm ${
+          router.asPath === href ? "dark:text-green-600" : "text-black"
+        } dark:text-white`}
+      >
+        {children}
+      </div>
     </Link>
   );
 };
