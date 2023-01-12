@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: "class",
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -17,6 +18,14 @@ module.exports = {
         4: "4px",
         6: "30px",
         8: "52px",
+      },
+      minWidth: {
+        "1/4": "25%",
+        200: "200px",
+      },
+      maxWidth: {
+        "1/4": "25%",
+        300: "300px",
       },
     },
   },

@@ -1,6 +1,8 @@
-import { Popover, Transition } from "@headlessui/react";
+import { Menu, Popover, Transition } from "@headlessui/react";
 import Link from "next/link";
-import { Fragment } from "react";
+import { useRouter } from "next/router";
+import { Fragment, useEffect, useState } from "react";
+import ActiveLink from "./ActiveLink";
 
 const Logo = (
   <svg
@@ -22,141 +24,98 @@ const Logo = (
   </svg>
 );
 
-const Navbar = () => {
+const ChevronDown = () => {
   return (
-    // <div className="flex justify-between items-center ">
-    <Popover className={`pt-6 px-4`}>
-      {({ open }) => (
-        <>
-          {open ? (
-            <nav className="flex justify-between">
-              <Link href="/">{Logo}</Link>
-              <Transition
-                enter="transition duration-100 ease-out"
-                enterFrom="transform scale-95 opacity-0"
-                enterTo="transform scale-100 opacity-100"
-                leave="transition duration-75 ease-out"
-                leaveFrom="transform scale-100 opacity-100"
-                leaveTo="transform scale-95 opacity-0"
-              >
-                <Popover.Panel static>
-                  <ul className=" gap-x-12 flex flex-col">
-                    <Popover.Button>
-                      <li>
-                        <Link className="flex " href="/about">
-                          <div className="pr-1 text-sm text-green-600 font-mono">
-                            01.
-                          </div>
-                          <div className="text-sm text-gray-400 underline">
-                            About
-                          </div>
-                        </Link>
-                      </li>
-                    </Popover.Button>
-                    <Popover.Button>
-                      <li>
-                        <Link className="flex" href="/experience">
-                          <div className="pr-1 text-sm text-green-600 font-mono">
-                            02.
-                          </div>
-                          <div className="text-sm text-gray-400">
-                            Experience
-                          </div>
-                        </Link>
-                      </li>
-                    </Popover.Button>
-                    <Popover.Button>
-                      <li>
-                        <Link className="flex" href="/contact">
-                          <div className="pr-1 text-sm text-green-600 font-mono">
-                            03.
-                          </div>
-                          <div className="text-sm text-gray-400">Contact</div>
-                        </Link>
-                      </li>
-                    </Popover.Button>
-                  </ul>
-                </Popover.Panel>
-              </Transition>
-            </nav>
-          ) : (
-            <nav className="flex justify-between sm:px-6 md:px-6 lg:px-20">
-              <Link href="/">{Logo}</Link>
-              <Popover.Button className={`pr-4 sm:hidden`}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="#A1A1AA"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="#A1A1AA"
-                  className={`w-10 h-10`}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              </Popover.Button>
-              <ul className="hidden gap-x-12 sm:flex">
-                <li>
-                  <Link className="flex" href="/about">
-                    <div className="pr-1 text-sm text-green-600 font-mono">
-                      01.
-                    </div>
-                    <div className="text-sm text-gray-400">About</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="flex" href="/experience">
-                    <div className="pr-1 text-sm text-green-600 font-mono">
-                      02.
-                    </div>
-                    <div className="text-sm text-gray-400">Experience</div>
-                  </Link>
-                </li>
-                <li>
-                  <Link className="flex" href="/contact">
-                    <div className="pr-1 text-sm text-green-600 font-mono">
-                      03.
-                    </div>
-                    <div className="text-sm text-gray-400">Contact</div>
-                  </Link>
-                </li>
-              </ul>
-            </nav>
-          )}
-        </>
-      )}
-    </Popover>
-    // </div>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={1.5}
+      stroke="currentColor"
+      className="w-3 h-3 dark:stroke-white"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+      />
+    </svg>
+  );
+};
+
+const Navbar = () => {
+  const router = useRouter();
+  const [route, setRoute] = useState<string>("");
+
+  useEffect(() => {
+    const handleRouteChange = (url: string) => {
+      // console.log("route: ", route);
+      // setRoute(url);
+      // console.log("route: ", route);
+      // console.log("route: ", route);
+      // console.log("router.pathname: ", router.pathname);
+      // console.log("url: ", url);
+      // console.log("router.events: ", router);
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
+  return (
+    <>
+      <nav className="hidden sm:flex justify-center shadow-md w-fit border rounded-full h-10 items-center px-6">
+        <ul className="hidden gap-x-12 sm:flex">
+          <li>
+            <ActiveLink children={"About"} href="/about" />
+          </li>
+          <li>
+            <ActiveLink children={"Experience"} href="/experience" />
+          </li>
+          <li>
+            <ActiveLink children={"Contact"} href="/contact" />
+          </li>
+        </ul>
+      </nav>
+      <div className="sm:hidden flex justify-center shadow-md w-fit border rounded-full h-10 items-center px-5">
+        <Menu>
+          <Menu.Button
+            className={`flex justify-center items-center gap-2 dark:text-white`}
+          >
+            Menu
+            <ChevronDown />
+          </Menu.Button>
+          <Menu.Items
+            className={`absolute top-20 bg-white p-6 rounded-md shadow-inner w-1/2`}
+          >
+            <div className="">
+              <Menu.Item>
+                {({ close }) => (
+                  <div onClick={close}>
+                    <ActiveLink children={"About"} href="/about" />
+                  </div>
+                )}
+              </Menu.Item>
+            </div>
+            <Menu.Item>
+              {({ close }) => (
+                <div onClick={close}>
+                  <ActiveLink children={"Experience"} href="/experience" />
+                </div>
+              )}
+            </Menu.Item>
+            <Menu.Item>
+              {({ close }) => (
+                <div onClick={close}>
+                  <ActiveLink children={"Contact"} href="/contact" />
+                </div>
+              )}
+            </Menu.Item>
+          </Menu.Items>
+        </Menu>
+      </div>
+    </>
   );
 };
 
 export default Navbar;
-
-// : (
-// <nav>
-//   <Link href="/">{Logo}</Link>
-<ul className="hidden gap-x-12 sm:flex">
-  <li>
-    <Link className="flex" href="/about">
-      <div className="pr-1 text-sm text-green-600 font-mono">01.</div>
-      <div className="text-sm text-gray-400">About</div>
-    </Link>
-  </li>
-  <li>
-    <Link className="flex" href="/experience">
-      <div className="pr-1 text-sm text-green-600 font-mono">02.</div>
-      <div className="text-sm text-gray-400">Experience</div>
-    </Link>
-  </li>
-  <li>
-    <Link className="flex" href="/contact">
-      <div className="pr-1 text-sm text-green-600 font-mono">03.</div>
-      <div className="text-sm text-gray-400">Contact</div>
-    </Link>
-  </li>
-</ul>;
-// </nav>
-//               )
