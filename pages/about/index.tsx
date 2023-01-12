@@ -1,6 +1,6 @@
 import ProjectCard from "components/ProjectCard";
 import { useEffect } from "react";
-import { cards } from "./cards";
+import { cards } from "../../lib/cards";
 
 const About = () => {
   useEffect(() => {

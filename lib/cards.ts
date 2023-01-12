@@ -36,7 +36,7 @@ const getBrandStyle = () => {
   return availableStyles[random].bg;
 };
 
-const cards: Card[] = [
+export const cards: Card[] = [
   {
     id: 1,
     background: "bg-violet-100",
@@ -171,5 +171,3 @@ const cards: Card[] = [
     ],
   },
 ];
-
-export default cards;

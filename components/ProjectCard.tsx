@@ -1,4 +1,4 @@
-import { Card } from "pages/about/cards";
+import { Card } from "lib/cards";
 import { use, useEffect } from "react";
 
 const ProjectCard = ({ key, project }: { key: number; project: Card }) => {
