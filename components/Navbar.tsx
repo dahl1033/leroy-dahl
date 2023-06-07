@@ -1,8 +1,9 @@
+import { Fragment, useEffect, useState } from "react";
 import { Menu, Popover, Transition } from "@headlessui/react";
+
+import ActiveLink from "./ActiveLink";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Fragment, useEffect, useState } from "react";
-import ActiveLink from "./ActiveLink";
 
 const Logo = (
   <svg
@@ -64,7 +65,7 @@ const Navbar = () => {
   }, [router.events]);
   return (
     <>
-      <nav className="hidden sm:flex justify-center shadow-md w-fit border rounded-full h-10 items-center px-6">
+      <nav className="hidden sm:flex justify-center shadow-md w-fit border rounded-lg h-10 items-center px-6 dark:bg-navy dark:border-transparent">
         <ul className="hidden gap-x-12 sm:flex">
           <li>
             <ActiveLink children={"About"} href="/about" />

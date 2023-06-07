@@ -10,6 +10,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      textColor: {
+        navy: "#334155"
+      },
+      backgroundColor: {
+        darkBlue: "#10101A",
+        navy: "#1D1E29"
+      },
       borderWidth: {
         DEFAULT: "1px",
         0: "0",

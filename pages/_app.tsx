@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 
 import type { AppType } from "next/app";
-
 import { Layout } from "../components/Layout";
 import Navbar from "components/Navbar";
 
@@ -36,8 +35,8 @@ const MyApp: AppType = ({ Component, pageProps }) => {
   return (
     <div className="bg-neutral-100 dark:bg-slate-700">
       <Layout>
-        <div className="flex justify-center h-full flex-col max-w-6xl bg-white dark:bg-slate-800">
-          <div className="w-full flex justify-end ">
+        <div className="flex justify-center h-full flex-col max-w-6xl bg-white dark:bg-darkBlue">
+          <div className="w-full flex sm:justify-center justify-end">
             <div className="flex sm:grid sm:grid-cols-3 p-6">
               <div className="hidden sm:flex" />
               <div className="flex justify-center mr-6 sm:mr-0">
@@ -55,14 +54,6 @@ const MyApp: AppType = ({ Component, pageProps }) => {
             </div>
           </div>
           <Component {...pageProps} />
-          <div className="flex h-96 w-full mt-8 bg-gray-200 dark:bg-slate-900 ">
-            <div className="flex flex-col mt-8 -px-8">
-              <h1 className="text-4xl font-bold text-black md:mb-1 mt-6 dark:text-white sm:leading-tight">
-                {`This is copy This is copy This is copy This is copy This is copy This is copy This is copy This is copy `}
-              </h1>
-              <h3 className="text-sm text-gray-500 mt-6">{`This is copy This is copy This is copy This is copy This is copy This is copy This is copy This is copyThis is copy`}</h3>
-            </div>
-          </div>
         </div>
       </Layout>
     </div>
