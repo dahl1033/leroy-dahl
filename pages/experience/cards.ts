@@ -38,7 +38,7 @@ const getBrandStyle = () => {
 
 export const cards: Card[] = [
   {
-    id: 1,
+    id: 0,
     background: "bg-violet-100",
     title: "Housing First Minnesota",
     toolDescription: "React, Rails, PostgreSQL, Stripe",
@@ -57,7 +57,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    id: 2,
+    id: 1,
     background: "bg-white",
     title: "Housing First Minnesota",
     toolDescription: "React, Rails, PostgreSQL, Stripe",
@@ -76,7 +76,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    id: 3,
+    id: 2,
     background: "bg-gray-200",
     title: "Housing First Minnesota",
     toolDescription: "React, Rails, PostgreSQL, Stripe",
@@ -95,7 +95,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    id: 4,
+    id: 3,
     background: "bg-white",
     title: "Housing First Minnesota",
     toolDescription: "React, Rails, PostgreSQL, Stripe",
@@ -114,7 +114,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    id: 5,
+    id: 4,
     background: getBrandStyle(),
     title: "Housing First Minnesota",
     toolDescription: "React, Rails, PostgreSQL, Stripe",
@@ -133,7 +133,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    id: 6,
+    id: 5,
     background: getBrandStyle(),
     title: "Housing First Minnesota",
     toolDescription: "React, Rails, PostgreSQL, Stripe",
@@ -152,7 +152,7 @@ export const cards: Card[] = [
     ],
   },
   {
-    id: 7,
+    id: 6,
     background: getBrandStyle(),
     title: "Housing First Minnesota",
     toolDescription: "React, Rails, PostgreSQL, Stripe",

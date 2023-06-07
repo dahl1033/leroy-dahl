@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 
 import BeeComponent from "components/Bee";
+import ContactForm from "components/ContactForm";
 import Link from "next/link";
 import ProjectCard from "components/ProjectCard";
+import ProjectModal from "components/ProjectModal";
 import SpinningImage from "components/SpinningImages";
 import SpinningImages from "components/SpinningImages";
 import { cards } from "../experience/cards";
@@ -31,7 +33,7 @@ const About = () => {
 
   return (
     <div className="flex flex-col h-full p-8">
-      <div className="flex flex-col-reverse md:flex-row ">
+      <div className="flex sm:flex-col-reverse flex-col md:flex-row ">
         <div className="md:flex md:flex-col md:justify-end md:w-2/3 mt-6">
           {/* <h1 className="text-6xl font-bold text-navy md:mb-12 mb-8 dark:text-white">
             Hi, I'm LeRoy.
@@ -40,7 +42,7 @@ const About = () => {
             turning
             <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text"> ideas </span>
             into real life
-            <span id="productHover" className="hover:p-1 hover:cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text"> products</span> is my niche.
+            <span id="productHover" className="hover:p-1 hover:cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text"> products</span>
           </h1>
         </div>
         {/* <img
@@ -61,8 +63,8 @@ const About = () => {
         href="/experience"
       ><span>VIEW PROJECTS</span>
         <span className="text-black dark:text-white -mt-4">____________</span></Link> */}
-      <div className="flex flex-col sm:flex-row mt-12 w-full gap-2">
-        <div className="w-1/3 shadow-md border rounded-lg dark:border-transparent h-80">
+      <div className="flex flex-col-reverse sm:flex-row mt-12 w-full gap-2">
+        <div className="sm:w-1/3 w-full shadow-md border rounded-lg dark:border-transparent h-80 sm:mt-0 mt-6">
           <div className="w-full border rounded-t-lg dark:border-transparent bg-gradient-to-r from-purple-500 to-pink-500 h-16">
             <h1 className="text-2xl font-bold text-white text-center pt-4 p-4 flex">
               Projects
@@ -70,15 +72,15 @@ const About = () => {
           </div>
           <div className="flex flex-col border rounded-b-lg overflow-scroll bg-white h-64">
             {cards.map((card) => (
-              <ProjectCard project={card} key={0} />
+              <ProjectCard project={card} key={card.id} />
             ))}
           </div>
         </div>
-        <div className="w-2/3 flex flex-col shadow-md border rounded-lg  items-center px-6 dark:bg-navy dark:border-transparent">
-          <h1 className="text-4xl font-bold text-navy md:mb-1 mt-6 dark:text-white sm:leading-tight">
+        <div className="sm:w-2/3 w-full flex flex-col shadow-md border rounded-lg  items-center px-6 dark:bg-navy dark:border-transparent p-6">
+          <h1 className="text-4xl font-bold text-navy dark:text-white sm:leading-tight">
             {`Let's build the future together.`}
           </h1>
-          <h3 className="text-sm text-gray-500 mt-6">{`In addition to my technical skills, I am a lifelong learner. The field of software 
+          <h3 className="text-sm text-gray-500 sm:mt-2 mt-4">{`In addition to my technical skills, I am a lifelong learner. The field of software 
           engineering is ever-evolving, and I am dedicated to staying ahead of the curve. I actively seek out new technologies, frameworks, 
           and industry trends to ensure that I can offer the most innovative and up-to-date solutions to my clients. As you explore my portfolio, 
           you'll find a diverse range of projects that highlight my expertise and creativity. From web applications to mobile apps, I have successfully 
@@ -90,10 +92,10 @@ const About = () => {
           world of software engineering.`}</h3>
         </div>
       </div>
-      <div className="flex flex-col mt-12">
+      <div className="flex flex-col lg:my-12 mb-12">
         <div className="flex flex-col mt-8">
-          <h1 className="text-4xl font-bold text-navy md:mb-1 mt-6 dark:text-white sm:leading-tight">How to build a product</h1>
-          <h3 className="text-sm text-gray-500">I believe strongly that software should be built the same way we would build a car. Focus on what the user wants and make it as easy as possible for them to use.
+          <h1 className="text-4xl font-bold text-navy md:mb-1 mt-6 dark:text-white sm:leading-tight">How I work</h1>
+          <h3 className="text-sm text-gray-500 mt-6 sm:mt-0">I believe strongly that software should be built the same way we would build a car. Focus on what the user wants and make it as easy as possible for them to use.
             In this case, a user wants to go from point A to point B faster. So we build a car. Or do we? We could build a skateboard, a motorcycle, a car, or a plane.
             The point is, we need to build the right product for the right user. If the budget we have is ginormous, we can build a plane. If the budget is small, we
             can build a skateboard. Ultimately they all get the user from point A to point B, but the user experience is vastly different.</h3>
@@ -110,6 +112,8 @@ const About = () => {
 
         </div>
       </div>
+      <ContactForm />
+      <ProjectModal />
     </div>
   );
 };

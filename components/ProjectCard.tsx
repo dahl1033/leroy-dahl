@@ -2,6 +2,7 @@ import { use, useEffect, useState } from "react";
 
 import { Card } from "pages/experience/cards";
 import { Dialog } from "@headlessui/react";
+import { useRouter } from "next/router";
 
 const ChevronRight = () => <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -10,9 +11,17 @@ const ChevronRight = () => <svg xmlns="http://www.w3.org/2000/svg" fill="none" v
 
 const ProjectCard = ({ key, project }: { key: number; project: Card }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    // Add the query parameter 'project' with the value '1' to the current URL
+    console.log(project)
+    router.push({ query: { project: project.id } });
+  };
   return (
     <div className="flex flex-row h-20 justify-between p-2 items-center min-h-[80px] border border-transparent border-b-black">
-      <div onClick={() => setIsOpen(true)} className="flex flex-row gap-2 items-center"
+      <div onClick={() => handleClick()} className="flex flex-row gap-2 items-center"
       >
         <img src={project.image} alt="project image" className="w-20" />
 
@@ -23,19 +32,6 @@ const ProjectCard = ({ key, project }: { key: number; project: Card }) => {
           <ChevronRight />
         </div>
       </div>
-      {isOpen && (
-        <div className="none fixed top-0 w-[100vh] h-full">
-          <div className="fixed inset-0 bg-black/30" />
-          <div className="relative m-auto p-5 w-1/2 max-w-[500px] bg-white mt-1/2">
-            <img src={project.image} alt="project image" className="w-20" />
-            <p>
-              Are you sure you want to deactivate your account? All of your data
-              will be permanently removed. This action cannot be undone.
-              <button onClick={() => setIsOpen(false)}>Cancel</button>
-            </p>
-          </div>
-        </div>
-      )}
     </div>
 
   );

@@ -23,6 +23,25 @@ const LightIcon = () => {
   );
 };
 
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      gapi.load('client:auth2', () => {
+        gapi.client.init({
+          apiKey: 'AIzaSyB8MUoFfY2K5Wz2pOrYrxKqwD26rkJOKOs', // Replace with your API key
+          discoveryDocs: [
+            'https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest',
+            'https://sheets.googleapis.com/$discovery/rest?version=v4',
+          ],
+          clientId: '115732261059506455449', // Replace with your OAuth client ID
+          scope: 'https://www.googleapis.com/auth/gmail.send https://www.googleapis.com/auth/forms', // Include the Gmail send scope here
+        });
+      });
+    `,
+  }}
+></script>
+
+
 const MyApp: AppType = ({ Component, pageProps }) => {
   const handleThemeChange = () => {
     const html = document.querySelector("html");
