@@ -1,4 +1,3 @@
-import CardModal from "components/CardModal";
 import ProjectCard from "components/ProjectCard";
 import SpinningImages from "../../components/SpinningImages";
 import { cards } from "./cards"
