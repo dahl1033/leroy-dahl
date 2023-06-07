@@ -70,7 +70,7 @@ const About = () => {
           </div>
           <div className="flex flex-col border rounded-b-lg overflow-scroll bg-white h-64">
             {cards.map((card) => (
-              <ProjectCard key={card.id} project={card} />
+              <ProjectCard project={card} key={0} />
             ))}
           </div>
         </div>

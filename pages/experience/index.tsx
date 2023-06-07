@@ -26,7 +26,7 @@ const Experience = () => {
           {cards.map((card) => (
             <ProjectCard key={card.id} project={card} />
           ))}
-          <CardModal />
+          {/* <CardModal /> */}
         </div>
       </div>
     </div>
