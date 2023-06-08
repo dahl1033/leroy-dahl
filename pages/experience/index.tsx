@@ -1,6 +1,6 @@
 import ProjectCard from "components/ProjectCard";
 import SpinningImages from "../../components/SpinningImages";
-import { cards } from "./cards"
+import { cards } from "../types"
 
 const Experience = () => {
   return (

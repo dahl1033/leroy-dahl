@@ -1,6 +1,6 @@
 import { use, useEffect, useState } from "react";
 
-import { Card } from "pages/experience/cards";
+import { Card } from "pages/types";
 import { Dialog } from "@headlessui/react";
 import { useRouter } from "next/router";
 
