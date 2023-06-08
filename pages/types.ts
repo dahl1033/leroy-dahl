@@ -8,33 +8,33 @@ export interface Card {
   keyPoints: { id: number; text: string }[];
 }
 
-// const getBrandStyle = () => {
-//   const random = Math.floor(Math.random() * 5);
-//   console.log(random);
-//   const availableStyles = [
-//     {
-//       text: "text-violet-500",
-//       bg: "bg-violet-100",
-//     },
-//     {
-//       text: "text-denim-500",
-//       bg: "bg-blue-100",
-//     },
-//     {
-//       text: "text-aqua-500",
-//       bg: "bg-stone-100",
-//     },
-//     {
-//       text: "text-meadow-500",
-//       bg: "bg-yellow-200",
-//     },
-//     {
-//       text: "text-marigold-500",
-//       bg: "bg-red-100",
-//     },
-//   ];
-//   return availableStyles[random].bg;
-// };
+const getBrandStyle = () => {
+  const random = Math.floor(Math.random() * 5);
+  console.log(random);
+  const availableStyles = [
+    {
+      text: "text-violet-500",
+      bg: "bg-violet-100",
+    },
+    {
+      text: "text-denim-500",
+      bg: "bg-blue-100",
+    },
+    {
+      text: "text-aqua-500",
+      bg: "bg-stone-100",
+    },
+    {
+      text: "text-meadow-500",
+      bg: "bg-yellow-200",
+    },
+    {
+      text: "text-marigold-500",
+      bg: "bg-red-100",
+    },
+  ];
+  return availableStyles[random].bg;
+};
 
 export const cards: Card[] = [
   {
