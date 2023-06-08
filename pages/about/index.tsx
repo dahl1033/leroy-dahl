@@ -7,7 +7,7 @@ import ProjectCard from "components/ProjectCard";
 import ProjectModal from "components/ProjectModal";
 import SpinningImage from "components/SpinningImages";
 import SpinningImages from "components/SpinningImages";
-import { cards } from "../types";
+import { cards } from "../../components/types";
 
 const About = () => {
   const [hasRotated, setHasRotated] = useState(false);

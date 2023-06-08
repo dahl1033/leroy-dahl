@@ -2,7 +2,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { useEffect, useState } from 'react';
 
 import React from 'react';
-import { cards } from "../pages/types";
+import { cards } from "./types";
 import { useRouter } from 'next/router';
 
 const ProjectModal = () => {
