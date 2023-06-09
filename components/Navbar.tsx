@@ -50,13 +50,6 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleRouteChange = (url: string) => {
-      // console.log("route: ", route);
-      // setRoute(url);
-      // console.log("route: ", route);
-      // console.log("route: ", route);
-      // console.log("router.pathname: ", router.pathname);
-      // console.log("url: ", url);
-      // console.log("router.events: ", router);
     };
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
@@ -68,7 +61,7 @@ const Navbar = () => {
       <nav className="hidden sm:flex justify-center shadow-md w-fit border rounded-lg h-10 items-center px-6 dark:bg-navy dark:border-transparent">
         <ul className="hidden gap-x-12 sm:flex">
           <li>
-            <ActiveLink children={"About"} href="/about" />
+            LeRoy Dahl
           </li>
           <li>
             <ActiveLink children={"Experience"} href="/experience" />

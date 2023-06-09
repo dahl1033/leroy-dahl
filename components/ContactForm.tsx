@@ -9,7 +9,7 @@ const CloseModalIcon = () => <svg xmlns="http://www.w3.org/2000/svg" fill="none"
 
 
 function ContactForm() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
@@ -49,7 +49,7 @@ function ContactForm() {
         <>
             <button
                 onClick={() => setIsOpen(true)}
-                className="self-center text-white w-24 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:border-transparent bg-gradient-to-r from-purple-500 to-pink-500"
+                className="self-center text-white mt-10 w-24 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:border-transparent bg-gradient-to-r from-purple-500 to-pink-500"
             >
                 Contact
             </button>

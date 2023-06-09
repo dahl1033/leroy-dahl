@@ -17,18 +17,21 @@ const ProjectCard = ({ key, project }: { key: number; project: Card }) => {
   const handleClick = () => {
     // Add the query parameter 'project' with the value '1' to the current URL
     console.log(project)
-    router.push({ query: { project: project.id } });
+    router.push({
+      query: { project: project.id },
+    },
+      undefined, { scroll: false });
   };
   return (
-    <div className="flex flex-row h-20 justify-between p-2 items-center min-h-[80px] border border-transparent border-b-black">
-      <div onClick={() => handleClick()} className="flex flex-row gap-2 items-center"
+    <div className="flex flex-row h-20 justify-between p-2 items-center min-h-[80px] border border-transparent border-b-black w-full">
+      <div onClick={() => handleClick()} className="flex flex-row items-center justify-between w-full"
       >
-        <img src={project.image} alt="project image" className="w-20" />
+        <div className="flex gap-2">
+          <img src={project.image} alt="project image" className="w-20 self-center" />
 
-        <div className="">
-          <h1>{project.title}</h1>
+          <h1 className="self-center">{project.title}</h1>
         </div>
-        <div>
+        <div className="self-center">
           <ChevronRight />
         </div>
       </div>

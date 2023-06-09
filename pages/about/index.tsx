@@ -34,10 +34,7 @@ const About = () => {
   return (
     <div className="flex flex-col h-full p-8">
       <div className="flex sm:flex-col-reverse flex-col md:flex-row ">
-        <div className="md:flex md:flex-col md:justify-end md:w-2/3 mt-6">
-          {/* <h1 className="text-6xl font-bold text-navy md:mb-12 mb-8 dark:text-white">
-            Hi, I'm LeRoy.
-          </h1> */}
+        <div className="md:flex md:flex-col md:justify-end md:w-2/3">
           <h1 className="text-7xl font-bold text-gray-400 dark:text-white mb-8">
             turning
             <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text"> ideas </span>
@@ -45,24 +42,12 @@ const About = () => {
             <span id="productHover" className="hover:p-1 hover:cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text"> products</span>
           </h1>
         </div>
-        {/* <img
-          src="/smiles-remove.png"
-          alt="smiles"
-          className="md:w-1/4 md:h-1/4 w-full h-auto border-3 rounded-full "
-        /> */}
-        {/* <div className=""> */}
         <Link
           className={`flex flex-col text-black dark:text-white justify-end`}
           href="/experience"
         ><span>LEARN MORE</span>
           <span className="text-black dark:text-white -mt-4">____________</span></Link>
-        {/* </div> */}
       </div>
-      {/* <Link
-        className={`flex flex-col text-black dark:text-white `}
-        href="/experience"
-      ><span>VIEW PROJECTS</span>
-        <span className="text-black dark:text-white -mt-4">____________</span></Link> */}
       <div className="flex flex-col-reverse sm:flex-row mt-12 w-full gap-2">
         <div className="sm:w-1/3 w-full shadow-md border rounded-lg dark:border-transparent h-80 sm:mt-0 mt-6">
           <div className="w-full border rounded-t-lg dark:border-transparent bg-gradient-to-r from-purple-500 to-pink-500 h-16">
@@ -80,7 +65,7 @@ const About = () => {
           <h1 className="text-4xl font-bold text-navy dark:text-white sm:leading-tight">
             {`Let's build the future together.`}
           </h1>
-          <h3 className="text-sm text-gray-500 sm:mt-2 mt-4">{`In addition to my technical skills, I am a lifelong learner. The field of software 
+          <h3 className="text-sm text-gray-500 sm:mt-2 mt-4">{`The field of software 
           engineering is ever-evolving, and I am dedicated to staying ahead of the curve. I actively seek out new technologies, frameworks, 
           and industry trends to ensure that I can offer the most innovative and up-to-date solutions to my clients. As you explore my portfolio, 
           you'll find a diverse range of projects that highlight my expertise and creativity. From web applications to mobile apps, I have successfully 
@@ -92,21 +77,20 @@ const About = () => {
           world of software engineering.`}</h3>
         </div>
       </div>
-      <div className="flex flex-col lg:my-12 mb-12">
+      <div className="flex flex-col lg:my-12 mb-20">
         <div className="flex flex-col mt-8">
           <h1 className="text-4xl font-bold text-navy md:mb-1 mt-6 dark:text-white sm:leading-tight">How I work</h1>
-          <h3 className="text-sm text-gray-500 mt-6 sm:mt-0">I believe strongly that software should be built the same way we would build a car. Focus on what the user wants and make it as easy as possible for them to use.
-            In this case, a user wants to go from point A to point B faster. So we build a car. Or do we? We could build a skateboard, a motorcycle, a car, or a plane.
-            The point is, we need to build the right product for the right user. If the budget we have is ginormous, we can build a plane. If the budget is small, we
-            can build a skateboard. Ultimately they all get the user from point A to point B, but the user experience is vastly different.</h3>
-          <div className="flex sm:justify-center items-center">
-            <h3 className="text-sm text-gray-500 w-4/5 sm:w-auto">The thing to keep in mind is that if the user only knew how to walk, they would (at first) be happy with a skateboard. But as they experience more, they will
-              want to go faster. So we build a bike with gears. Then they want to go faster. So we build a motorcycle. Then they want to be warm and safer. So we build a car.</h3>
-            <SpinningImages />
+          <div className="flex flex-row w-full">
+            <h3 className="text-sm text-gray-500 mt-6 sm:mt-0 md:w-1/2 lg:w-3/5">I strongly believe software development should emulate the process of building a car,
+              focusing on user needs and ensuring ease of use. Just as users desire faster transportation from point A to point B, we create various options
+              like skateboards, motorcycles, cars, or planes to cater to different users.
+              <div className="w-72 float-right md:hidden"><SpinningImages /></div>
+              The key is to match the right product with the right user based on
+              budget and user experience requirements. Initially, a skateboard satisfies a user who only knows how to walk, but as they seek faster options,
+              we progress to bikes, motorcycles, and eventually cars. This sequential approach applies to software development as well, starting with a basic
+              version (skateboard) and gradually adding functionality and components with each iteration.</h3>
+            <div className="w-72 md:flex hidden md:w-1/2 lg:w-2/5 justify-center"><SpinningImages /></div>
           </div>
-
-          <h3 className="text-sm text-gray-500">This is how I approach software. I build the skateboard first, then the bike, then the motorcycle, then the car. All of which have functionality and components
-            of the product before them.</h3>
         </div>
         <div className="w-full justify-end flex">
 

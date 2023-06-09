@@ -20,11 +20,12 @@ const ProjectModal = () => {
 
     const removeProjectParam = () => {
         const { pathname, query } = router;
-        delete query.project;
-        router.push({
-            pathname,
-            query,
-        });
+        // delete query.project;
+        // router.push({
+        //     pathname,
+        //     query,
+        // });
+        router.replace(pathname, undefined, { shallow: true });
     };
 
     return (
@@ -45,7 +46,7 @@ const ProjectModal = () => {
                         <p className="text-sm text-gray-500">
                             {project.description}
                         </p>
-                        <button className='w-16 self-end hover:bg-blend-darken text-white border rounded dark:border-transparent bg-gradient-to-r from-purple-500 to-pink-500' onClick={() => removeProjectParam()}>Close</button>
+                        <button className='self-end mt-2 text-white w-18 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:border-transparent bg-gradient-to-r from-purple-500 to-pink-500' onClick={() => removeProjectParam()}>Close</button>
                     </div>
                 </div>
             </Dialog>
