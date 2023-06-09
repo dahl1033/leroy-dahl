@@ -1,12 +1,15 @@
+import { FormEventHandler, useEffect, useRef, useState } from "react";
+
 import { Dialog } from "@headlessui/react";
-import Navbar from "components/Navbar";
-import { NextPage } from "next";
+import Disclosure from "../components/Disclosure";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { FormEventHandler, useEffect, useRef, useState } from "react";
+import Navbar from "components/Navbar";
+import { NextPage } from "next";
 import styles from "../styles/Home.module.css";
+import { useRouter } from "next/router";
+
 const ArrowRight = () => {
   return (
     <svg
@@ -125,67 +128,70 @@ const Home: NextPage = () => {
     }, 500 * password.length + 1000);
   };
   return (
-    <Dialog
-      className="absolute top-0 bottom-0 right-0 left-0 h-screen w-screen flex justify-center items-center bg-white dark:bg-gray-800"
-      open={isOpen}
-      onClose={() => setIsOpen(true)}
-    >
-      <Dialog.Panel>
-        <div className="flex flex-col md:flex-row ">
-          <img
-            src="/finger-drawing-removebg-preview.png"
-            alt="hero"
-            className="md:w-1/2 w-full h-auto"
-          />
-          <div className="md:flex md:flex-col md:justify-center mt-8">
-            <form
-              id="passwordForm"
-              onSubmit={handleSubmit}
-              className="flex flex-col items-center"
-            >
-              <label className="text-4xl font-bold text-gray-800 md:mb-16 mb-8 gap-2 dark:text-white">
-                - Checkout my work!
-              </label>
-              <div className="w-2/3">
-                <div className="flex w-auto">
-                  <input
-                    id="passwordInput"
-                    type="text"
-                    className="w-full border-b-2 border-gr focus:outline-none dark:bg-transparent dark:boder-white dark:text-white"
-                    placeholder="Guess the password"
-                    onChange={() => setIsClearing(false)}
-                  />
-                  {isClearing ? (
-                    <div className="-ml-6" onClick={clearInput}>
-                      <ClearInputIcon />
-                    </div>
-                  ) : (
-                    <div className="dark:stroke-white" onClick={handleSubmit}>
-                      <ArrowRight />
+    <>
+      <Dialog
+        className="absolute top-0 bottom-0 right-0 left-0 h-screen w-screen flex justify-center items-center bg-white dark:bg-gray-800"
+        open={isOpen}
+        onClose={() => setIsOpen(true)}
+      >
+        <Dialog.Panel>
+          <div className="flex flex-col md:flex-row ">
+            <img
+              src="/finger-drawing-removebg-preview.png"
+              alt="hero"
+              className="md:w-1/2 w-full h-auto"
+            />
+            <div className="md:flex md:flex-col md:justify-center mt-8">
+              <form
+                id="passwordForm"
+                onSubmit={handleSubmit}
+                className="flex flex-col items-center"
+              >
+                <label className="text-4xl font-bold text-gray-800 md:mb-16 mb-8 gap-2 dark:text-white">
+                  - Checkout my work!
+                </label>
+                <div className="w-2/3">
+                  <div className="flex w-auto">
+                    <input
+                      id="passwordInput"
+                      type="text"
+                      className="w-full border-b-2 border-gr focus:outline-none dark:bg-transparent dark:boder-white dark:text-white"
+                      placeholder="Guess the password"
+                      onChange={() => setIsClearing(false)}
+                    />
+                    {isClearing ? (
+                      <div className="-ml-6" onClick={clearInput}>
+                        <ClearInputIcon />
+                      </div>
+                    ) : (
+                      <div className="dark:stroke-white" onClick={handleSubmit}>
+                        <ArrowRight />
+                      </div>
+                    )}
+                  </div>
+                  {error !== "" && (
+                    <div
+                      onClick={() => setError("")}
+                      className="flex justify-between text-sm text-red-500"
+                    >
+                      {error}
+                      <CloseErrorIcon />
                     </div>
                   )}
                 </div>
-                {error !== "" && (
-                  <div
-                    onClick={() => setError("")}
-                    className="flex justify-between text-sm text-red-500"
-                  >
-                    {error}
-                    <CloseErrorIcon />
-                  </div>
-                )}
-              </div>
-              <div
-                className="w-auto h-12 bg-gray-800 text-white dark:bg-white dark:text-gray-800  flex justify-center items-center mt-16 rounded-sm cursor-pointer px-6"
-                onClick={() => handleSolve(secret)}
-              >
-                Solve for me
-              </div>
-            </form>
+                <div
+                  className="w-auto h-12 bg-gray-800 text-white dark:bg-white dark:text-gray-800  flex justify-center items-center mt-16 rounded-sm cursor-pointer px-6"
+                  onClick={() => handleSolve(secret)}
+                >
+                  Solve for me
+                </div>
+              </form>
+            </div>
           </div>
-        </div>
-      </Dialog.Panel>
-    </Dialog>
+        </Dialog.Panel>
+      </Dialog>
+      <Disclosure />
+    </>
   );
 };
 
