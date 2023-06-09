@@ -15,7 +15,7 @@ const SpinningImages: React.FC = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentImage((prevImage) => (prevImage + 1) % images.length);
-        }, 1000);
+        }, 3000);
 
         return () => {
             clearInterval(interval);
