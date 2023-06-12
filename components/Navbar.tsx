@@ -61,13 +61,13 @@ const Navbar = () => {
       <nav className="hidden sm:flex justify-center shadow-md w-fit border rounded-lg h-10 items-center px-6 dark:bg-navy dark:border-transparent">
         <ul className="hidden gap-x-12 sm:flex">
           <li>
-            LeRoy Dahl
+            <ActiveLink children={"About"} href="/about" />
           </li>
           <li>
-            <ActiveLink children={"Experience"} href="/experience" />
+            <ActiveLink children={"Experience"} href="/about" />
           </li>
           <li>
-            <ActiveLink children={"Contact"} href="/contact" />
+            <ActiveLink children={"Contact"} href="/about" />
           </li>
         </ul>
       </nav>

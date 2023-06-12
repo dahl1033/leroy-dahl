@@ -23,7 +23,7 @@ const ProjectCard = ({ key, project }: { key: number; project: Card }) => {
       undefined, { scroll: false });
   };
   return (
-    <div className="flex flex-row h-20 justify-between p-2 items-center min-h-[80px] border border-transparent border-b-black w-full">
+    <div className="flex flex-row hover:cursor-pointer h-20 justify-between p-2 items-center min-h-[80px] border border-transparent border-b-black w-full">
       <div onClick={() => handleClick()} className="flex flex-row items-center justify-between w-full"
       >
         <div className="flex gap-2">
