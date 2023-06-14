@@ -64,10 +64,10 @@ const Navbar = () => {
             <ActiveLink children={"About"} href="/about" />
           </li>
           <li>
-            <ActiveLink children={"Experience"} href="/about" />
+            <ActiveLink children={"Experience"} href="/experience" />
           </li>
           <li>
-            <ActiveLink children={"Contact"} href="/about" />
+            <ActiveLink children={"Contact"} href="/contact" />
           </li>
         </ul>
       </nav>

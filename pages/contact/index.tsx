@@ -1,4 +1,13 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+
 const Contact = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/about');
+  }, []);
+
   return (
     <div className="flex flex-col ">
       <div className="text-sm text-green-600 font-mono mb-8">

@@ -1,8 +1,16 @@
 import ProjectCard from "components/ProjectCard";
 import SpinningImages from "../../components/SpinningImages";
 import { cards } from "../../components/types"
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 const Experience = () => {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push('/about');
+  }, []);
+
   return (
     <div className="flex flex-col h-full p-8">
       {/* <h1 className="text-7xl font-bold text-gray-50 mb-8">Experience</h1> */}
