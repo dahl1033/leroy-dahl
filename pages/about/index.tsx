@@ -1,4 +1,9 @@
-import { useEffect, useState } from "react";
+import {
+  Icon,
+  IconList,
+  IconProps,
+} from "components/Icons";
+import { useEffect, useRef, useState } from "react";
 
 import BeeComponent from "components/Bee";
 import ContactForm from "components/ContactForm";
@@ -10,6 +15,55 @@ import SpinningImages from "components/SpinningImages";
 import { cards } from "../../components/types";
 
 const About = () => {
+  function quad(timeFraction: number) {
+    return Math.pow(timeFraction, 2)
+  }
+  function makeEaseOut(timing: (arg0: number) => number) {
+    return function(timeFraction: number) {
+      return 1 - timing(1 - timeFraction);
+    }
+  }
+  
+  let posArray: any = Array(IconList.length).fill(0);
+  let idArray: any = Array(IconList.length).fill(null);
+  let blocksArray: any = []
+
+  function frame (pos:any, block:any, togo:any, id: any) {
+    console.log("FRAMMMING")
+    if (block?.offsetLeft == togo?.offsetLeft && block?.offsetTop == togo?.offsetTop) {
+      clearInterval(id);
+      id= null
+    } else {
+      posArray[pos]++;
+      if (block?.offsetTop !== togo?.offsetTop) {
+        block.style.top = pos + 'px';
+      }
+      if (block?.offsetLeft !== togo?.offsetLeft) {
+        block.style.left = pos + 'px';
+      }
+    }
+  }
+  useEffect(() => {
+
+    
+
+    const runner = () => {
+      let togo = document.getElementById("togo");
+      
+      for (let i= 0; i < IconList.length; i++ ) {
+        let block = document.getElementById(IconList[i].icon);
+        console.log({block, blocks: block?.offsetTop,icon: IconList[i].icon })
+        if (blocksArray[i]) {
+          clearInterval(idArray[i]);
+          idArray[i] = setInterval(frame(i, block, togo, idArray[i]), 80);
+          
+}}
+
+}
+runner()
+;}, []);
+  const ref = useRef(null);
+
   const [hasRotated, setHasRotated] = useState(false);
   useEffect(() => {
     console.log("cards: ", cards);
@@ -21,6 +75,11 @@ const About = () => {
     "../../public/assets/car.jpg",
     "../../public/assets/animated_car_gif.gif",
   ]
+
+  const handleClick = () => {
+    ref.current?.scrollIntoView({behavior: 'smooth'});
+  };
+
   useEffect(() => {
     const textBlock = document?.getElementById('productHover');
     textBlock?.addEventListener('onmouseover', function () {
@@ -33,15 +92,35 @@ const About = () => {
 
   return (
     <div className="flex flex-col h-full p-8">
+      {/* <div id="myAnimation" className="absolute h-20 w-20 bg-yellow-400"/> */}
+      {IconList.map((icon) => (
+        <div id={icon.icon} className="absolute">
+           <div className="flex justify-center align-center flex-col wrap items-center w-fit">
+            <Icon
+              // id={icon.icon}
+              key={icon.icon}
+              icon={icon.icon}
+              color="red"
+              height={60}
+              width={60}
+              backgroundColor="white"
+            />
+            <h1 className="">
+              {icon.name}
+            </h1>
+          </div>
+          </div>
+        ))}
       <div className="flex sm:flex-col-reverse flex-col md:flex-row ">
         <div className="md:flex md:flex-col md:justify-end md:w-2/3">
           <h1 className="text-7xl font-bold text-gray-400 dark:text-white mb-8">
             turning
             <span className="bg-gradient-to-r from-cyan-500 to-blue-500 text-transparent bg-clip-text"> ideas </span>
             into real life
-            <span id="productHover" className="hover:p-1 hover:cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text"> products</span>
+            <span id="productHover" onClick={handleClick} className="hover:p-1 hover:cursor-pointer bg-gradient-to-r from-purple-500 to-pink-500 text-transparent bg-clip-text"> products</span>
           </h1>
         </div>
+        
         <Link
           className={`flex flex-col text-black dark:text-white justify-end`}
           href="/experience"
@@ -61,23 +140,29 @@ const About = () => {
             ))}
           </div>
         </div>
-        <div className="sm:w-2/3 w-full flex flex-col shadow-md border rounded-lg  items-center px-6 dark:bg-navy dark:border-transparent p-6">
+        <div id="togo" className="sm:w-2/3 w-full flex flex-col shadow-md border rounded-lg  items-center px-6 dark:bg-navy dark:border-transparent p-6">
           <h1 className="text-4xl font-bold text-navy dark:text-white sm:leading-tight">
             {`Let's build the future together.`}
           </h1>
-          <h3 className="text-sm text-gray-500 sm:mt-2 mt-4">{`The field of software 
-          engineering is ever-evolving, and I am dedicated to staying ahead of the curve. I actively seek out new technologies, frameworks, 
-          and industry trends to ensure that I can offer the most innovative and up-to-date solutions to my clients. As you explore my portfolio, 
-          you'll find a diverse range of projects that highlight my expertise and creativity. From web applications to mobile apps, I have successfully 
-          delivered projects across multiple domains. Each project represents a unique challenge that I embraced wholeheartedly, working diligently to 
-          find the most elegant and efficient solutions. I am excited about the possibilities that lie ahead in the world of software engineering. Whether 
-          you're a startup looking to bring your vision to life, a company seeking to optimize its processes, or an individual with an idea that could change 
-          the world, I am ready to be your trusted partner in transforming concepts into reality. Thank you for visiting my portfolio site. I invite you to explore 
-          my projects, learn more about my skills and experiences, and get in touch if you'd like to collaborate on a project or simply have a chat about the fascinating 
-          world of software engineering.`}</h3>
+          {/* {IconList.map((icon) => (
+           <div className="flex justify-center align-center flex-col wrap items-center w-fit">
+            <Icon
+              key={icon.icon}
+              icon={icon.icon}
+              color="red"
+              height={60}
+              width={60}
+              backgroundColor="white"
+            />
+            <h1 className="">
+              {icon.name}
+            </h1>
+          </div>
+        ))} */}
+          <h3 className="text-sm text-gray-500 sm:mt-2 mt-4">HELLO</h3>
         </div>
       </div>
-      <div className="flex flex-col lg:my-12 mb-20">
+      <div ref={ref} className="flex flex-col lg:my-12 mb-20">
         <div className="flex flex-col mt-8">
           <h1 className="text-4xl font-bold text-navy md:mb-1 mt-6 dark:text-white sm:leading-tight">How I work</h1>
           <div className="flex flex-row w-full">

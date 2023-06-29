@@ -121,11 +121,11 @@ const Home: NextPage = () => {
     for (let i = 0; i < password.length; i++) {
       setTimeout(() => {
         input.value += password[i];
-      }, 500 * i);
+      }, 100 * i);
     }
     setTimeout(() => {
       validatePassword(password);
-    }, 500 * password.length + 1000);
+    }, 10 * password.length + 1000);
   };
   return (
     <>
@@ -190,7 +190,7 @@ const Home: NextPage = () => {
           </div>
         </Dialog.Panel>
       </Dialog>
-      <Disclosure />
+      {/* <Disclosure /> */}
     </>
   );
 };
