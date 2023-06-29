@@ -16,12 +16,6 @@ function Disclosure() {
 
     return (
         <>
-            <button
-                onClick={() => setIsOpen(true)}
-                className="self-center text-white mt-10 w-24 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline dark:border-transparent bg-gradient-to-r from-purple-500 to-pink-500"
-            >
-                Contact
-            </button>
             <Transition.Root show={isOpen} as={React.Fragment}>
                 <Dialog
                     as="div"
@@ -31,7 +25,7 @@ function Disclosure() {
                     <div className="fixed inset-0 bg-gray-500 opacity-50"></div>
                     <div className="relative bg-white p-8 sm:max-w-sm rounded-lg m-4 sm:m-0">
                         <div className='absolute float-right top-[10px] right-[10px]' onClick={() => setIsOpen(false)}><CloseModalIcon /></div>
-                        <h1 className="text-4xl font-bold text-navy md:mb-1 dark:text-white sm:leading-tight">Warning</h1>
+                        <h1 className="text-4xl font-bold text-navy md:mb-1 dark:text-white sm:leading-tight">You may notice...</h1>
                         <h3 className="text-sm text-gray-500 mt-2 w-full">This website is still undergoing work.
                             I occasionally add things when i have time outside of my day job and other projects.</h3>
                     </div>

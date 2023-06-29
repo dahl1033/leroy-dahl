@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 
 import BeeComponent from "components/Bee";
 import ContactForm from "components/ContactForm";
+import Disclosure from "components/Disclosure";
 import Link from "next/link";
 import ProjectCard from "components/ProjectCard";
 import ProjectModal from "components/ProjectModal";
@@ -188,6 +189,7 @@ const About = () => {
       </div>
       <ContactForm />
       <ProjectModal />
+      <Disclosure />
     </div>
   );
 };
