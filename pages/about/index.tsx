@@ -13,56 +13,57 @@ import ProjectModal from "components/ProjectModal";
 import SpinningImage from "components/SpinningImages";
 import SpinningImages from "components/SpinningImages";
 import { cards } from "../../components/types";
+import { useTheme } from "next-themes";
 
 const About = () => {
-  function quad(timeFraction: number) {
-    return Math.pow(timeFraction, 2)
-  }
-  function makeEaseOut(timing: (arg0: number) => number) {
-    return function(timeFraction: number) {
-      return 1 - timing(1 - timeFraction);
-    }
-  }
+//   function quad(timeFraction: number) {
+//     return Math.pow(timeFraction, 2)
+//   }
+//   function makeEaseOut(timing: (arg0: number) => number) {
+//     return function(timeFraction: number) {
+//       return 1 - timing(1 - timeFraction);
+//     }
+//   }
   
-  let posArray: any = Array(IconList.length).fill(0);
-  let idArray: any = Array(IconList.length).fill(null);
-  let blocksArray: any = []
+//   let posArray: any = Array(IconList.length).fill(0);
+//   let idArray: any = Array(IconList.length).fill(null);
+//   let blocksArray: any = []
 
-  function frame (pos:any, block:any, togo:any, id: any) {
-    console.log("FRAMMMING")
-    if (block?.offsetLeft == togo?.offsetLeft && block?.offsetTop == togo?.offsetTop) {
-      clearInterval(id);
-      id= null
-    } else {
-      posArray[pos]++;
-      if (block?.offsetTop !== togo?.offsetTop) {
-        block.style.top = pos + 'px';
-      }
-      if (block?.offsetLeft !== togo?.offsetLeft) {
-        block.style.left = pos + 'px';
-      }
-    }
-  }
-  useEffect(() => {
+//   function frame (pos:any, block:any, togo:any, id: any) {
+//     console.log("FRAMMMING")
+//     if (block?.offsetLeft == togo?.offsetLeft && block?.offsetTop == togo?.offsetTop) {
+//       clearInterval(id);
+//       id= null
+//     } else {
+//       posArray[pos]++;
+//       if (block?.offsetTop !== togo?.offsetTop) {
+//         block.style.top = pos + 'px';
+//       }
+//       if (block?.offsetLeft !== togo?.offsetLeft) {
+//         block.style.left = pos + 'px';
+//       }
+//     }
+//   }
+//   useEffect(() => {
 
     
 
-    const runner = () => {
-      let togo = document.getElementById("togo");
+//     const runner = () => {
+//       let togo = document.getElementById("togo");
       
-      for (let i= 0; i < IconList.length; i++ ) {
-        let block = document.getElementById(IconList[i].icon);
-        console.log({block, blocks: block?.offsetTop,icon: IconList[i].icon })
-        if (blocksArray[i]) {
-          clearInterval(idArray[i]);
-          idArray[i] = setInterval(frame(i, block, togo, idArray[i]), 80);
+//       for (let i= 0; i < IconList.length; i++ ) {
+//         let block = document.getElementById(IconList[i].icon);
+//         console.log({block, blocks: block?.offsetTop,icon: IconList[i].icon })
+//         if (blocksArray[i]) {
+//           clearInterval(idArray[i]);
+//           idArray[i] = setInterval(frame(i, block, togo, idArray[i]), 80);
           
-}}
+// }}
 
-}
-runner()
-;}, []);
-  const ref = useRef(null);
+// }
+// runner()
+// ;}, []);
+  const ref = useRef<null | HTMLDivElement>(null);
 
   const [hasRotated, setHasRotated] = useState(false);
   useEffect(() => {
@@ -90,10 +91,11 @@ runner()
     });
   }, []);
 
+  // const html = document.querySelector("html")
   return (
     <div className="flex flex-col h-full p-8">
       {/* <div id="myAnimation" className="absolute h-20 w-20 bg-yellow-400"/> */}
-      {IconList.map((icon) => (
+      {/* {IconList.map((icon) => (
         <div id={icon.icon} className="absolute">
            <div className="flex justify-center align-center flex-col wrap items-center w-fit">
             <Icon
@@ -110,7 +112,7 @@ runner()
             </h1>
           </div>
           </div>
-        ))}
+        ))} */}
       <div className="flex sm:flex-col-reverse flex-col md:flex-row ">
         <div className="md:flex md:flex-col md:justify-end md:w-2/3">
           <h1 className="text-7xl font-bold text-gray-400 dark:text-white mb-8">
@@ -141,15 +143,17 @@ runner()
           </div>
         </div>
         <div id="togo" className="sm:w-2/3 w-full flex flex-col shadow-md border rounded-lg  items-center px-6 dark:bg-navy dark:border-transparent p-6">
-          <h1 className="text-4xl font-bold text-navy dark:text-white sm:leading-tight">
+          <h1 className="text-4xl font-bold mb-2 text-navy dark:text-white sm:leading-tight">
             {`Let's build the future together.`}
           </h1>
-          {/* {IconList.map((icon) => (
+          <div className="flex flex-wrap gap-8">
+          {IconList.map((icon) => (
            <div className="flex justify-center align-center flex-col wrap items-center w-fit">
+            
             <Icon
               key={icon.icon}
               icon={icon.icon}
-              color="red"
+              color="gray"
               height={60}
               width={60}
               backgroundColor="white"
@@ -158,7 +162,8 @@ runner()
               {icon.name}
             </h1>
           </div>
-        ))} */}
+        ))}
+        </div>
           <h3 className="text-sm text-gray-500 sm:mt-2 mt-4">HELLO</h3>
         </div>
       </div>
