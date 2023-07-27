@@ -7,46 +7,57 @@ export interface IconProps {
 }
 
 
-const FrontEndIconList = [
+export const FrontEndIconList = [
     { url: "", name: "CSS", icon: "CssIcon"},
     { url: "", name: "HTML", icon: "HtmlIcon"},
     { url: "", name: "Javascript", icon: "JavascriptIcon"},
     { url: "", name: "jQuery", icon: "JQueryIcon"},
-    { url: "", name: "Sass", icon: "SassIcon"},
     { url: "", name: "Typescript", icon: "TypescriptIcon"},
+    { url: "", name: "Sass", icon: "SassIcon"},
     { url: "", name: "Tailwind", icon: "TailwindIcon"},
-    { url: "", name: "NextJS", icon: "NextJsIcon"},
+    { url: "", name: "Material UI", icon: "MaterialUiIcon"},
+    { url: "", name: "Bootstrap", icon: "BootstrapIcon"},
     { url: "", name: "React", icon: "ReactIcon"},
+    { url: "", name: "NextJS", icon: "NextJsIcon"},
     { url: "", name: "Redux", icon: "ReduxIcon"},
+    { url: "", name: "React Native", icon: "ReactIcon"},
+    { url: "", name: "Webpack", icon: "WebpackIcon"},
     { url: "", name: "Eslint", icon: "EslintIcon"},
     { url: "", name: "Jest", icon: "JestIcon"},
-    { url: "", name: ".Net", icon: "DotNetIcon"},
-    { url: "", name: "C#", icon: "CSharpIcon"},
-    { url: "", name: "C++", icon: "CPlusPlusIcon"},
-    { url: "", name: "Java", icon: "JavaIcon"},
-    { url: "", name: "PHP", icon: "PhpIcon"},
-    { url: "", name: "Swift", icon: "SwiftIcon"},
-    { url: "", name: "Kotlin", icon: "KotlinIcon"},
     { url: "", name: "Android Studio", icon: "AndroidStudioIcon"}, 
     { url: "", name: "Xcode", icon: "XcodeIcon"}, 
 ]
 
-const BackEndIconList = [
-    { url: "", name: "Ruby", icon: "RubyIcon"},
-    { url: "", name: "Rails", icon: "RailsIcon"},
-    { url: "", name: "Node.js", icon: "NodeJsIcon"},
-    { url: "", name: "Python", icon: "PythonIcon"},
-    { url: "", name: "Sql Server", icon: "SqlServerIcon"},
-    { url: "", name: "PostgreSQL", icon: "PostgreSqlIcon"},
-    { url: "", name: "MongoDB", icon: "MongoDbIcon"},
-    { url: "", name: "Firebase", icon: "FirebaseIcon"},
+export const WebServerIconList = [
     { url: "", name: "Docker", icon: "DockerIcon"},
     { url: "", name: "Kubernetes", icon: "KubernetesIcon"},
     { url: "", name: "AWS", icon: "AwsIcon"},
     { url: "", name: "Azure", icon: "AzureIcon"},
     { url: "", name: "Heroku", icon: "HerokuIcon"},
+
 ]
+
+export const BackEndIconList = [
+    { url: "", name: "ASP.Net", icon: "DotNetIcon"},
+    { url: "", name: "Ruby", icon: "RubyIcon"},
+    { url: "", name: "Rails", icon: "RailsIcon"},
+    { url: "", name: "Node.js", icon: "NodeJsIcon"},
+    { url: "", name: "Java(Spring)", icon: "JavaIcon"},
+    { url: "", name: "Python", icon: "PythonIcon"},
+]
+
+export const DatabaseIconList = [
+    { url: "", name: "MySQL", icon: "MySqlIcon"},
+    { url: "", name: "MSSQL", icon: "SqlServerIcon"},
+    { url: "", name: "PostgreSQL", icon: "PostgreSqlIcon"},
+    { url: "", name: "MongoDB", icon: "MongoDbIcon"},
+]
+
 export const IconList = [
+{ url: "", name: "Java(Spring)", icon: "JavaIcon"},
+{ url: "", name: "Webpack", icon: "WebpackIcon"},
+{ url: "", name: "Material UI", icon: "MaterialUiIcon"},
+{ url: "", name: "Bootstrap", icon: "BootstrapIcon"},
 { url: "", name: "CSS", icon: "CssIcon"}, 
 { url: "", name: "HTML", icon: "HtmlIcon"}, 
 { url: "", name: "Javascript", icon: "JavascriptIcon"}, 
@@ -76,6 +87,30 @@ export const IconList = [
 
 export const Icon = ({ icon, color, height, width, backgroundColor }: IconProps) => {
 switch (icon) {
+    case "JavaIcon" :
+        return (
+            <svg viewBox="0 0 128 128" height={height ? height : ""} width={width ? width : ""}>
+            <path fill={color ? color : "ff0000"} d="M47.617 98.12c-19.192 5.362 11.677 16.439 36.115 5.969-4.003-1.556-6.874-3.351-6.874-3.351-10.897 2.06-15.952 2.222-25.844 1.092-8.164-.935-3.397-3.71-3.397-3.71zm33.189-10.46c-14.444 2.779-22.787 2.69-33.354 1.6-8.171-.845-2.822-4.805-2.822-4.805-21.137 7.016 11.767 14.977 41.309 6.336-3.14-1.106-5.133-3.131-5.133-3.131zm11.319-60.575c.001 0-42.731 10.669-22.323 34.187 6.024 6.935-1.58 13.17-1.58 13.17s15.289-7.891 8.269-17.777c-6.559-9.215-11.587-13.793 15.634-29.58zm9.998 81.144s3.529 2.91-3.888 5.159c-14.102 4.272-58.706 5.56-71.095.171-4.45-1.938 3.899-4.625 6.526-5.192 2.739-.593 4.303-.485 4.303-.485-4.952-3.487-32.013 6.85-13.742 9.815 49.821 8.076 90.817-3.637 77.896-9.468zM85 77.896c2.395-1.634 5.703-3.053 5.703-3.053s-9.424 1.685-18.813 2.474c-11.494.964-23.823 1.154-30.012.326-14.652-1.959 8.033-7.348 8.033-7.348s-8.812-.596-19.644 4.644C17.455 81.134 61.958 83.958 85 77.896zm5.609 15.145c-.108.29-.468.616-.468.616 31.273-8.221 19.775-28.979 4.822-23.725-1.312.464-2 1.543-2 1.543s.829-.334 2.678-.72c7.559-1.575 18.389 10.119-5.032 22.286zM64.181 70.069c-4.614-10.429-20.26-19.553.007-35.559C89.459 14.563 76.492 1.587 76.492 1.587c5.23 20.608-18.451 26.833-26.999 39.667-5.821 8.745 2.857 18.142 14.688 28.815zm27.274 51.748c-19.187 3.612-42.854 3.191-56.887.874 0 0 2.874 2.38 17.646 3.331 22.476 1.437 57-.8 57.816-11.436.001 0-1.57 4.032-18.575 7.231z"></path>
+            </svg>
+        )
+    case "MaterialUiIcon" :
+        return (
+            <svg viewBox="0 0 128 128" height={height ? height : ""} width={width ? width : ""}>
+            <path fill={color ? color : "ff0000"} d="M.2 68.6V13.4L48 41v18.4L16.1 41v36.8L.2 68.6zM48 41l47.9-27.6v55.3L64 87l-16-9.2 32-18.4V41L48 59.4V41z"></path><path fill={color ? color : "ff0000"} d="M48 77.8v18.4l32 18.4V96.2L48 77.8zM80 114.6L127.8 87V50.2l-16 9.2v18.4L80 96.2v18.4zM111.9 41V22.6l16-9.2v18.4l-16 9.2z"></path>
+            </svg>
+        )
+    case "BootstrapIcon" :
+        return (
+            <svg viewBox="0 0 128 128" height={height ? height : ""} width={width ? width : ""}>
+            <path d="M27.235 13.885c-7.177 0-12.486 6.284-12.249 13.099.228 6.546-.068 15.026-2.203 21.94-2.14 6.936-5.76 11.319-11.673 11.883v6.387c5.913.563 9.533 4.947 11.673 11.883 2.135 6.914 2.43 15.394 2.203 21.94-.238 6.815 5.072 13.098 12.249 13.098h73.54c7.177 0 12.486-6.284 12.249-13.098-.228-6.546.068-15.026 2.202-21.94 2.14-6.935 5.751-11.319 11.664-11.883v-6.387c-5.913-.563-9.523-4.947-11.664-11.883-2.134-6.914-2.43-15.394-2.202-21.94.237-6.815-5.072-13.099-12.25-13.099zm58.114 61.686c0 9.384-7.002 15.073-18.621 15.073H45.306a.491.491 0 01-.491-.491V37.827a.491.491 0 01.491-.492h21.309c9.689 0 16.047 5.246 16.047 13.3 0 5.653-4.277 10.713-9.727 11.6v.296c7.418.813 12.414 5.948 12.414 13.04zM64.571 44.096H53.293v15.922h9.5c7.342 0 11.391-2.955 11.391-8.238 0-4.95-3.481-7.684-9.613-7.684zm-11.278 22.24v17.548h11.695c7.645 0 11.695-3.066 11.695-8.83 0-5.763-4.163-8.718-12.187-8.718z" fill={color ? color : "ff0000"}></path>
+            </svg>
+        )
+    case "WebpackIcon" :
+        return (
+            <svg viewBox="0 0 128 128" height={height ? height : ""} width={width ? width : ""}>
+            <g fill={color ? color : "ff0000"}><path d="M117.29 98.1L66.24 127v-22.51L98 87l19.29 11.1zm3.5-3.16V34.55l-18.68 10.8v38.81l18.67 10.77zM10.71 98.1l51 28.88v-22.49L29.94 87zm-3.5-3.16V34.55l18.68 10.8v38.81zm2.19-64.3L61.76 1v21.76L28.21 41.21l-.27.15zm109.18 0L66.24 1v21.76L99.79 41.2l.27.15 18.54-10.71zM61.76 99.37L30.37 82.1V47.92L61.76 66zm4.48 0l31.39-17.25v-34.2L66.24 66zM32.5 44L64 26.66 95.5 44 64 62.16 32.5 44z"></path></g>
+            </svg>
+        )
     case "GitIcon" :
         return (
             <svg viewBox="0 0 128 128" height={height ? height : ""} width={width ? width : ""}>

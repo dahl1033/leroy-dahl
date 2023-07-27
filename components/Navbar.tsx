@@ -60,13 +60,13 @@ const Navbar = () => {
     <>
       <nav className="hidden sm:flex justify-center shadow-md w-fit border rounded-lg h-10 items-center px-6 dark:bg-navy dark:border-transparent">
         <ul className="hidden gap-x-12 sm:flex">
-          <li>
+          <li className="w-max">
             <ActiveLink children={"About"} href="/about" />
           </li>
-          <li>
-            <ActiveLink children={"Experience"} href="/experience" />
+          <li className="w-max">
+            <ActiveLink children={"Games(coming soon)"} href="/experience" />
           </li>
-          <li>
+          <li className="w-max">
             <ActiveLink children={"Contact"} href="/contact" />
           </li>
         </ul>
