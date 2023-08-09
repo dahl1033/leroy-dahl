@@ -52,7 +52,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
     }
   };
   return (
-    <div className="bg-neutral-100 dark:bg-slate-700">
+    <div className="bg-neutral-100 dark:bg-darkBlue">
       <Layout>
         <div className="flex justify-center h-full flex-col max-w-6xl bg-white dark:bg-darkBlue">
           <div className="w-full flex sm:justify-center justify-end">
