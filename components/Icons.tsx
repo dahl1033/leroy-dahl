@@ -30,9 +30,7 @@ export const FrontEndIconList = [
 
 export const WebServerIconList = [
     { url: "", name: "Docker", icon: "DockerIcon"},
-    { url: "", name: "Kubernetes", icon: "KubernetesIcon"},
     { url: "", name: "AWS", icon: "AwsIcon"},
-    { url: "", name: "Azure", icon: "AzureIcon"},
     { url: "", name: "Heroku", icon: "HerokuIcon"},
 
 ]
@@ -281,6 +279,8 @@ switch (icon) {
         )
     default:
         return (
+            <div>
             "ERR"
+            </div>
         )
     }}

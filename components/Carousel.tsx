@@ -30,7 +30,7 @@ const Carousel = ({ icons, color }: any) => {
                 color={color}
                 height={60}
                 width={60}
-                backgroundColor="white"
+                backgroundColor={'white'}
               />
         </div>
       ))}
