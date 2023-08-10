@@ -130,7 +130,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Dialog
-        className="absolute top-0 bottom-0 right-0 left-0 h-screen w-screen flex justify-center items-center bg-white dark:bg-gray-800"
+        className="absolute top-0 bottom-0 right-0 left-0  w-screen flex justify-center items-center bg-white dark:bg-gray-800"
         open={isOpen}
         onClose={() => setIsOpen(true)}
       >

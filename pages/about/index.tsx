@@ -91,7 +91,7 @@ function MyDialog() {
           </li>
         </ul>
       </nav> */}
-      <section className=" h-screen flex mt-12 p-2 sm:mt-32 sm:p-8">
+      <section className="flex mt-12 p-2 sm:mt-32 sm:p-8">
         <AnimatedElement>
         <div className="flex sm:flex-col-reverse flex-col md:flex-row ">
           <div className="md:flex md:flex-col md:justify-end md:w-2/3">
@@ -109,7 +109,7 @@ function MyDialog() {
           ><span>LEARN MORE</span>
             <span className="text-black dark:text-white -mt-4">____________</span></Link>
       </div>
-      <div className="sm:w-1/3 w-full shadow-md border rounded-lg dark:border-transparent h-80 mt-10 sm:mt-16">
+      <div className="sm:w-1/3 w-full shadow-md border rounded-lg dark:border-transparent h-80 my-10 sm:mt-16">
           <div className="w-full border rounded-t-lg dark:border-transparent bg-gradient-to-r from-purple-500 to-pink-500 h-16">
             <h1 className="text-2xl font-bold text-white text-center pt-4 p-4 flex">
               Clients
