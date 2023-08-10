@@ -64,10 +64,10 @@ const Navbar = () => {
             <ActiveLink children={"About"} href="/about" />
           </li>
           <li className="w-max">
-            <ActiveLink children={"Experience"} href="/experience" />
+            <ActiveLink children={"My Toolkit"} href="/toolkit" />
           </li>
           <li className="w-max">
-            <ActiveLink children={"Games"} href="/contact" />
+            <ActiveLink children={"Games"} href="/games" />
           </li>
         </ul>
       </nav>
@@ -94,14 +94,14 @@ const Navbar = () => {
             <Menu.Item>
               {({ close }) => (
                 <div onClick={close}>
-                  <ActiveLink children={"Experience"} href="/experience" className="dark:text-gray-900" />
+                  <ActiveLink children={"My ToolKit"} href="/toolkit" className="dark:text-gray-900" />
                 </div>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ close }) => (
                 <div onClick={close}>
-                  <ActiveLink children={"Contact"} href="/contact" className="dark:text-gray-900"/>
+                  <ActiveLink children={"Games"} href="/games" className="dark:text-gray-900"/>
                 </div>
               )}
             </Menu.Item>
